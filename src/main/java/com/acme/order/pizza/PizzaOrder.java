@@ -1,14 +1,23 @@
-package com.acme.order;
+package com.acme.order.pizza;
 
 import java.util.Date;
 
+import lombok.Getter;
+import lombok.ToString;
+
+import com.acme.order.Customer;
+import com.acme.order.OrderStatus;
+
+@ToString
 public class PizzaOrder {
 
+	private String id;
 	private Date estimatedDeliveryTime;
 	private Date finishTime;
+	@Getter
 	private OrderStatus state;
-	private Customer customer;
-	private PizzaType pizzaType;
+	private final Customer customer;
+	private final PizzaType pizzaType;
 
 	public PizzaOrder(Customer customer, PizzaType pizzaType) {
 		this.state = OrderStatus.CREATED;
@@ -65,6 +74,14 @@ public class PizzaOrder {
 
 	public PizzaType getPizzaType() {
 		return pizzaType;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 }

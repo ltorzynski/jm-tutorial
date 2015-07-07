@@ -1,15 +1,14 @@
 package com.acme.order;
 
+import lombok.Data;
+
+@Data
 public class Customer {
 
-	public String getEmail() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	private final String name;
 
-	public String getAddress() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	private final String email;
+
+	private final String address;
 
 }

@@ -1,7 +1,12 @@
 package com.acme.order;
 
-public interface OrderFactory {
+import com.acme.order.pizza.PizzaOrder;
+import com.acme.order.pizza.PizzaType;
 
-	PizzaOrder create(Customer customer, PizzaType type);
+public class OrderFactory {
+
+	public PizzaOrder create(Customer customer, PizzaType pizzaType) {
+		return new PizzaOrder(customer, pizzaType);
+	}
 
 }
